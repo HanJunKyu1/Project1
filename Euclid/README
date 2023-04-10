@@ -1,7 +1,7 @@
 코드 및 테스트 케이스
 
 test함수헤더파일
-``` test.h
+```c
 #pragma once
 //함수 전방 선언
 int testEuclideRecursion();
