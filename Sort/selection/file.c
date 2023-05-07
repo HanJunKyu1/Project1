@@ -15,7 +15,7 @@ void fileInOut()
 		fclose(fp);
 	}
 	else {
-		printf("颇老累诀 角菩.\n");
+		printf("韺岇澕鞛戩梾 鞁ろ尐.\n");
 		return;
 	}
 
@@ -24,15 +24,15 @@ void fileInOut()
 
 	int result = selection(A, 0, n - 1, k);
 
-	printf("%d 锅掳 累篮 盔家: %d\n", k, result);
+	printf("%d 氩堨Ц 鞛戩潃 鞗愳唽: %d\n", k, result);
 
 	if (fopen_s(&fp, "Result.txt", "w") == 0) {
 		fprintf(fp, "%d", result);
 		fclose(fp);
-		printf("颇老累诀 己傍.\n");
+		printf("韺岇澕鞛戩梾 靹标车.\n");
 	}
 	else 
 	{
-		printf("颇老累诀 角菩.\n");
+		printf("韺岇澕鞛戩梾 鞁ろ尐.\n");
 	}
 }
