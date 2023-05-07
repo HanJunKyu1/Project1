@@ -67,7 +67,7 @@ int selection(int A[], int left, int right, int k) {
 ```
 
 ```c
-//
+//파일처리
 void fileInOut()
 {
 	int A[12];
