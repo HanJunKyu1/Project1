@@ -12,7 +12,7 @@ void test1();
 ```
 
 ```c
-//알고리즘 코드
+//피봇값 설정
 int dividePivot(int A[], int left, int right)
 {
 
@@ -44,6 +44,7 @@ int dividePivot(int A[], int left, int right)
 	return p - 1; // 피봇의 인덱스 반환
 }
 
+//정렬 후 원소 찾기
 int selection(int A[], int left, int right, int k) {
 	if (left == right) { // 배열에 하나의 원소만 남은 경우
 		return A[left];
