@@ -2,17 +2,17 @@
 int dividePivot(int A[], int left, int right)
 {
 
-	// ÇÇº¿À» A[left]~A[right]¿¡¼­ ·£´ıÇÏ°Ô ¼±ÅÃ
-	int pivotIndex = left + rand() % (right - left + 1);
-	int pivot = A[pivotIndex];
+	// í”¼ë´‡ì„ A[left]~A[right]ì—ì„œ ëœë¤í•˜ê²Œ ì„ íƒ
+	int pivotNum = left + rand() % (right - left + 1);
+	int pivot = A[pivotNum];
 
-	// ÇÇº¿°ú A[left]ÀÇ ÀÚ¸®¸¦ ¹Ù²Ş
+	// í”¼ë´‡ê³¼ A[left]ì˜ ìë¦¬ë¥¼ ë°”ê¿ˆ
 	int temp = A[left];
-	A[left] = A[pivotIndex];
-	A[pivotIndex] = temp;
+	A[left] = A[pivotNum];
+	A[pivotNUm] = temp;
 
-	// ÇÇº¿º¸´Ù ÀÛÀº ¼ıÀÚ´Â A[left+1]~A[p-1]·Î ¿Å±â°í, ÇÇº¿º¸´Ù Å« ¼ıÀÚ´Â A[p+1]~A[right]·Î ¿Å±è
-	int p = left + 1; // ÇÇº¿ÀÇ »õ·Î¿î À§Ä¡
+	// í”¼ë´‡ë³´ë‹¤ ì‘ì€ ìˆ«ìëŠ” A[left+1]~A[p-1]ë¡œ ì˜®ê¸°ê³ , í”¼ë´‡ë³´ë‹¤ í° ìˆ«ìëŠ” A[p+1]~A[right]ë¡œ ì˜®ê¹€
+	int p = left + 1; // í”¼ë´‡ì˜ ìƒˆë¡œìš´ ìœ„ì¹˜
 	for (int i = left + 1; i <= right; i++) {
 		if (A[i] < pivot) {
 			temp = A[i];
@@ -22,30 +22,30 @@ int dividePivot(int A[], int left, int right)
 		}
 	}
 
-	// ÇÇº¿À» A[p]¿¡ ³õÀ½
+	// í”¼ë´‡ì„ A[p]ì— ë†“ìŒ
 	temp = A[left];
 	A[left] = A[p - 1];
 	A[p - 1] = temp;
 
-	return p - 1; // ÇÇº¿ÀÇ ÀÎµ¦½º ¹İÈ¯
+	return p - 1; // í”¼ë´‡ì˜ ì¸ë±ìŠ¤ ë°˜í™˜
 }
 
 int selection(int A[], int left, int right, int k) {
-	if (left == right) { // ¹è¿­¿¡ ÇÏ³ªÀÇ ¿ø¼Ò¸¸ ³²Àº °æ¿ì
+	if (left == right) { // ë°°ì—´ì— í•˜ë‚˜ì˜ ì›ì†Œë§Œ ë‚¨ì€ ê²½ìš°
 		return A[left];
 	}
 
-	int p = dividePivot(A, left, right); // ÇÇº¿À» ¼±ÅÃÇÏ°í ºĞÇÒ
+	int p = dividePivot(A, left, right); // í”¼ë´‡ì„ ì„ íƒí•˜ê³  ë¶„í• 
 
-	int S = (p - 1) - left + 1; // Small groupÀÇ Å©±â
+	int S = (p - 1) - left + 1; // Small groupì˜ í¬ê¸°
 
 	if (k <= S) {
-		return selection(A, left, p - 1, k); // Small group¿¡¼­ k ¹øÂ° ÀÛÀº ¼ö¸¦ Ã£À½
+		return selection(A, left, p - 1, k); // Small groupì—ì„œ k ë²ˆì§¸ ì‘ì€ ìˆ˜ë¥¼ ì°¾ìŒ
 	}
 	else if (k == S + 1) {
-		return A[p]; // ÇÇº¿ÀÌ k ¹øÂ° ÀÛÀº ¼öÀÎ °æ¿ì
+		return A[p]; // í”¼ë´‡ì´ k ë²ˆì§¸ ì‘ì€ ìˆ˜ì¸ ê²½ìš°
 	}
 	else {
-		return selection(A, p + 1, right, k - S - 1); // Large group¿¡¼­ (k - S - 1) ¹øÂ° ÀÛÀº ¼ö¸¦ Ã£À½
+		return selection(A, p + 1, right, k - S - 1); // Large groupì—ì„œ (k - S - 1) ë²ˆì§¸ ì‘ì€ ìˆ˜ë¥¼ ì°¾ìŒ
 	}
 }
