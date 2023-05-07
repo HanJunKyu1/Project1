@@ -7,5 +7,5 @@ void test1()
 
 	int result = selection(A, 0, n - 1, k);
 
-	printf("test 1: \n%d ¹øÂ° ÀÛÀº ¿ø¼Ò: %d\n", k, result);
+	printf("test 1: \n%d Â¹Ã¸Ã‚Â° Ã€Ã›Ã€Âº Â¿Ã¸Â¼Ã’: %d\n", k, result);
 }
